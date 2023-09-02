@@ -45,7 +45,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
     paths: [
       { params: { id: 'prod_OVnNtExoqXVLRP' } }
     ],
-    fallback: true
+    /*
+      - false nao carrega oq nao tiver no path
+      - true ele faz a busca
+      - blocking tbm faz a busca mas so mostra ne tela quando 
+      finalizar essa busca
+    */
+    fallback: 'blocking'
   }
 }
 
